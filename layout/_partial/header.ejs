@@ -1,0 +1,24 @@
+<%- partial('_partial/loading') %>
+
+<header id="header" class="site-header clearfix">
+
+  <a class="logo square clearfix" href="/">
+    <!-- 
+      Replace with your own size name, for example:
+      <span class="b">A</span>
+      <span class="w">B</span>
+      <span class="b">C</span>
+     -->
+    <% var letters = config.title.split(''); letters.forEach(function(v, i) { %>
+      <span class="<%- i%2 === 0 || Math.random() > 0.6 ? 'b' : 'w' %>">
+        <%- v %>
+      </span>
+    <% }); %>
+  </a>
+  <a class="me square site-nav-switch clearfix">
+    <span class="b">
+    	<span class="icon icon-menu"></span>
+    </span>
+  </a>
+
+</header>

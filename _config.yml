@@ -1,0 +1,59 @@
+# Meta
+description: Private theme for artifact.me
+keywords: hexo,theme,artifact,otakism
+
+# Author
+author_avatar: /img/avatar.png
+
+# Search
+search: 
+  enable: false
+  service: hexo # swiftype/google/hexo/algolia/azure
+  # google 
+  google_api_key: 
+  google_engine_id: 
+  # algolia
+  algolia_app_id: 
+  algolia_api_key: 
+  algolia_index_name: 
+  # azure
+  azure_service_name: 
+  azure_index_name: 
+  azure_query_key: 
+
+# Miscellaneous
+google_analytics: 
+favicon: /favicon.png
+
+# Less
+less:
+  compress: true
+
+# use url, not username
+social:
+- name: feed
+	url: /atom.xml
+- name: email
+  url: 
+- name: github
+  url: https://github.com/artchen
+- name: twitter
+  url: 
+- name: google
+  url: 
+- name: facebook
+  url: 
+- name: linkedin
+  url: 
+- name: weibo
+  url: 
+- name: tumblr
+  url: 
+- name: dribbble
+  url: 
+- name: pinterest
+  url: 
+- name: instagram
+  url: 
+- name: behance
+  url: 

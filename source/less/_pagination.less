@@ -1,0 +1,51 @@
+/* Pagination */
+
+#page-nav {
+	position: relative;
+	width: 100%;
+	max-width: 700px;
+	margin: 20px auto 0px auto;
+	transition: all 0.4s;
+	transform: translate3d(0px, -20px, 0px);
+	opacity: 0;
+	text-align: center;
+	
+	&.show {
+		opacity: 1;
+		transform: translate3d(0px, 0px, 0px);
+	}
+	span, a {
+		display: inline-block;
+		padding: 0px 10px;
+		margin: 5px 0px;
+    height: 30px;
+    min-width: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    text-transform: uppercase;
+    vertical-align: middle;
+    text-align: center;
+    transition: all 0.24s;
+    border-bottom: 1px solid transparent;
+	}
+	span {
+    &.current {
+  		background: darken(@background-color,5%);
+      border-bottom: 1px solid darken(@background-color,20%);
+  		color: @black;
+  	}
+    &.space {
+      background: white;
+      color: @black
+    }
+  }
+  a {
+    background: white;
+    color: @black;
+
+    &:hover {
+      background: darken(@background-color,3%);
+      color: black;
+    }
+  }
+}

@@ -1,0 +1,77 @@
+<div class="site-sidebar">
+
+	<% display_toc = (is_post() || is_page()) && post.toc === true; %>
+	
+	<div class="sidebar-switch clearfix <%- display_toc ? 'show' : '' %>"
+		style="display: <%- display_toc ? 'block' : 'none' %>">
+		<a class="dark-btn active" data-toggle="toc">
+	    <span class="icon icon-list"></span>
+	    <span class="text">Index</span>
+	  </a>
+	  <a class="dark-btn" data-toggle="bio">
+	    <span class="icon icon-person"></span>
+	    <span class="text">Bio</span>
+	  </a>
+	</div>
+
+	<div class="site-toc <%- display_toc ? 'show' : '' %>"
+		style="display: <%- display_toc ? 'block' : 'none' %>">
+		<% if ( display_toc ) { %>
+	  	<%- toc(post.content) %>
+	  <% } else { %>
+	    <div class="no-index">No Index</div>
+	  <% } %>
+  </div>
+  
+	<div class="site-bio <%- display_toc ? '' : 'show' %>"
+		style="display: <%- display_toc ? 'none' : 'block' %>">
+		
+	  <!-- About Me -->
+	  <div class="about-me clearfix">
+	    <div class="avatar">
+	      <img src="<%- theme.author_avatar %>" />
+	    </div>
+	    <div class="info">
+	      <a class="name dark-btn" href="/about">
+	        <%- config.author %>
+	      </a>
+	    </div>
+	    <div class="info">
+	      <span class="item desc">
+	        <%- config.description %>
+	      </span>
+	    </div>
+	  </div>
+	
+	  <!-- Social Icons -->
+	  <div class="social clearfix">
+	    <% if (theme.social) { %>
+	      <% theme.social.forEach(function(value, key) {
+	           if (value.url && value.name) { %>
+	        <a href="<%= value.url %>" class="<%= value.name %>"
+	          target="_blank" rel="external">
+	          <span class="icon icon-<%= value.name %>"></span>
+	        </a>
+	      <% } }); %>
+	    <% } %>
+	  </div>
+	
+	  <!-- Home & Bottom -->
+	  <div class="shortcuts clearfix">
+	    <div class="bk">
+	      <a href="#header" class="dark-btn window-nav">
+	        <span class="icon icon-chevron-thin-up"></span>
+	        <span class="text">Back to Top</span>
+	      </a>
+	    </div>
+	    <div class="bk">
+	      <a href="#footer" class="dark-btn window-nav">
+	        <span class="icon icon-chevron-thin-down"></span>
+	        <span class="text">Go to Bottom</span>
+	      </a>
+	    </div>
+	  </div>
+
+	</div>
+
+</div>

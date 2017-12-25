@@ -1,0 +1,22 @@
+<div class="page-header">
+	<% if (is_tag()) { %>
+		- <%= page.tag %> -
+	<% } %>
+
+</div>
+
+<ul class="post-list clearfix">
+  <% page.posts.each(function(post){ %>
+    <%- partial('post', {post: post}) %>
+  <% }) %>
+</ul>
+
+<% if (page.total > 1){ %>
+  <nav id="page-nav">
+    <%- paginator({
+      prev_text: 'Prev',
+      next_text: 'Next'
+    }) %>
+  </nav>
+<% } %>
+

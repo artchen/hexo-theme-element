@@ -1,0 +1,18 @@
+<%- partial('_partial/head') %>
+<body>
+  <div class="site-wrapper">
+    <%- partial('_partial/header', null, {cache: !config.relative_link}) %>
+    <script>document.getElementById("loading-bar").style.width="40%";</script>
+    <main id="main" class="clearfix">
+      <%- body %>
+      <script>document.getElementById("loading-bar").style.width="60%";</script>
+    </main>
+    <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
+    <script>document.getElementById("loading-bar").style.width="80%";</script>
+    <div class="overlay"></div>
+  </div>
+  <%- partial('_partial/sidebar', {post: page}) %>
+  <%- partial('_partial/scripts') %>
+  <script>document.getElementById("loading-bar").style.width="100%";</script>
+</body>
+</html>
