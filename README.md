@@ -59,3 +59,10 @@ Copyright © Art Chen
 Please do not remove the "Theme by Art Chen" text and links.
 
 请不要删除页面底部的作者信息和链接。
+
+
+# 更改||修正  （2018.03.06）
+
+1. 修复了几处bug。在全局`_config.yml`中，若需设置`root: /`为`root: /XXXXXX/`，现在可以正常显示了（`_sidebar.less`中背景图片的路径暂不清楚如何修正，需手动更改一下即可）。
+2. 已修正让`html`标签包裹`body`标签。
+3. 注释掉了`scripts.ejs`中的`Swiftype`，因其配置与作者网站(ttps://artifact.me)绑定了。
