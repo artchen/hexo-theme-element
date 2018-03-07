@@ -29,10 +29,10 @@
 	  <!-- About Me -->
 	  <div class="about-me clearfix">
 	    <div class="avatar">
-	      <img src="<%- theme.author_avatar %>" />
+	      <img src="<%- url_for(theme.author_avatar) %>" />
 	    </div>
 	    <div class="info">
-	      <a class="name dark-btn" href="/about">
+	      <a class="name dark-btn" href="<%- url_for() %>about">
 	        <%- config.author %>
 	      </a>
 	    </div>
@@ -48,7 +48,7 @@
 	    <% if (theme.social) { %>
 	      <% theme.social.forEach(function(value, key) {
 	           if (value.url && value.name) { %>
-	        <a href="<%= value.url %>" class="<%= value.name %>"
+	        <a href="<%= url_for(value.url) %>" class="<%= value.name %>"
 	          target="_blank" rel="external">
 	          <span class="icon icon-<%= value.name %>"></span>
 	        </a>
