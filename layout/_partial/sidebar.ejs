@@ -48,7 +48,7 @@
 	    <% if (theme.social) { %>
 	      <% theme.social.forEach(function(value, key) {
 	           if (value.url && value.name) { %>
-	        <a href="<%= <%- url_for(value.url) %> %>" class="<%= value.name %>"
+	        <a href="<%= url_for(value.url) %>" class="<%= value.name %>"
 	          target="_blank" rel="external">
 	          <span class="icon icon-<%= value.name %>"></span>
 	        </a>
