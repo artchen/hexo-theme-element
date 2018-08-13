@@ -28,7 +28,7 @@
   <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700" rel="stylesheet">
 
   <% if (theme.google_analytics) { %>
-     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-74859643-1"></script>
+     <script async src="https://www.googletagmanager.com/gtag/js?id=<%= theme.google_analytics %>"></script>
      <script>
        window.dataLayer = window.dataLayer || [];
        function gtag(){dataLayer.push(arguments);}
