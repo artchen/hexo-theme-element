@@ -599,7 +599,7 @@ var HexoSearch;
      */
     self.contentSearch = function(post, queryText) {
       var post_title = post.title.trim().toLowerCase(),
-          post_content = post.text.trim().toLowerCase(),
+          post_content = post.content.trim().toLowerCase(),
           keywords = queryText.trim().toLowerCase().split(" "),
           foundMatch = false,
           index_title = -1,
@@ -622,7 +622,7 @@ var HexoSearch;
             }
           }
           if (foundMatch) {
-            post_content = post.text.trim();
+            post_content = post.content.trim();
             var start = 0, end = 0;
             if (first_occur >= 0) {
               start = Math.max(first_occur-30, 0);
