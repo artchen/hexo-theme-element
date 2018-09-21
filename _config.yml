@@ -29,6 +29,20 @@ favicon: /favicon.png
 less:
   compress: true
 
+# Comment
+disqus_shortname:
+valine:
+  enable: false
+  appid:
+  appkey:
+  notify: false
+  verify: false
+  placeholder: Just go go
+  avatar: retro
+  guest_info: nick,mail,link
+  pageSize: 10
+  visitor: false
+
 # use url, not username
 social:
 - name: feed
