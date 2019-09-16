@@ -42,12 +42,14 @@ var customSearch;
   var openBio = function(e) {
     var self = $(this);
     toggleActive(self, e);
-    $('body').addClass('bio-open');
+	$('body').addClass('bio-open');
+	$('.site-wrapper .overlay').show();
   };
 
   var closeBio = function(e) {
     $('body').removeClass('bio-open');
-    toggleActive($('.site-nav-switch'), e);
+	toggleActive($('.site-nav-switch'), e);
+	$('.site-wrapper .overlay').hide();
   };
   
   $(function() {
