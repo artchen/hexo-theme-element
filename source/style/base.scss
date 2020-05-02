@@ -1,9 +1,8 @@
+@import "./variables";
+
 * {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-ms-box-sizing: border-box;
-	box-sizing: border-box;
-	outline: none;
+  box-sizing: border-box;
+  outline: none;
   margin: 0;
   padding: 0;
 }
@@ -18,10 +17,10 @@ html {
 body {
   height: 100%;
   max-height: 100%;
-  font-family: @base-font-family;
+  font-family: $base-font-family;
   font-size: 1.8rem;
   line-height: 1.5em;
-  color: @black;
+  color: $black;
   -webkit-font-feature-settings: 'kern' 1;
   -moz-font-feature-settings: 'kern' 1;
   -o-font-feature-settings: 'kern' 1;
@@ -36,8 +35,12 @@ body {
   background: #D6EDFF;
 }
 
-h1, h2, h3,
-h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   -webkit-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
   -moz-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
   -o-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
@@ -70,7 +73,7 @@ h6 {
 }
 
 a {
-  color: @black;
+  color: $black;
   text-decoration: none;
   transition: all 0.24s ease;
 
@@ -80,29 +83,29 @@ a {
 }
 
 pre {
-	tab-size: 2;
+  tab-size: 2;
   -moz-tab-size: 2;
-  -o-tab-size: 2;
-  -webkit-tab-size: 2;
 }
 
 ::-webkit-input-placeholder {
-  color: lighten(@grey-color, 20%);
+  color: lighten($grey-color, 20%);
   font-weight: 300;
 }
 
-:-moz-placeholder { /* Firefox 18- */
-  color: lighten(@grey-color, 20%);
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: lighten($grey-color, 20%);
   font-weight: 300;
 }
 
-::-moz-placeholder {  /* Firefox 19+ */
-  color: lighten(@grey-color, 20%);
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: lighten($grey-color, 20%);
   font-weight: 300;
 }
 
 :-ms-input-placeholder {
-  color: lighten(@grey-color, 20%);
+  color: lighten($grey-color, 20%);
   font-weight: 300;
 }
 
@@ -125,13 +128,6 @@ pre {
   display: none;
 }
 
-.inner {
-  position: relative;
-  width: 80%;
-  max-width: 710px;
-  margin: 0 auto;
-}
-
 .vertical {
   display: table-cell;
   vertical-align: middle;
@@ -140,70 +136,38 @@ pre {
 .right {
   float: right;
 }
+
 .left {
   float: left;
-}
-
-body.bio-open {
-	
-	.site-sidebar {
-		transform: translate3d(0, 0, 0);
-	}
-	.site-wrapper {
-		transform: translate3d(-280px, 0, 0);
-
-		.overlay {
-			opacity: 1;
-			visibility: visible;
-		}
-	}
 }
 
 .site-wrapper {
   position: relative;
   min-height: 100%;
   overflow: hidden;
-	transition: all 0.24s ease;
-	z-index: 10;
+  transition: all 0.24s ease;
+  z-index: 10;
 
-	.overlay {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		content: "";
-		opacity: 0;
-		background-color: fade(@white, 50%);
-		transition: all 0.24s ease;
-		visibility: hidden;
-		z-index: 9999;
-	}
-}
-
-.dark-btn {
-  display: inline-block;
-  background: rgba(0,0,0,0.3);
-  border: 1px solid black;
-  padding: 0px 15px;
-  font-size: 13px;
-  font-family: @base-font-family;
-  text-align: center;
-  color: lighten(#8f8f8f, 20%);
-
-  &:hover {
-    color: lighten(#8f8f8f, 40%);
-    background-color: @brand-color;
+  @media (prefers-color-scheme: dark) {
+    background-color: $dark-mode-site-background;
   }
-  .icon {
-    margin-right: 5px;
-    font-size: 16px;
-    vertical-align: middle;
-    line-height: 44px;
+  &.is_post_page {
+    @media (prefers-color-scheme: dark) {
+      background-color: lighten($dark-mode-site-background, 10%);
+    }
   }
-  .text {
-    vertical-align: middle;
-    line-height: 44px;
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: all 0.24s ease;
+    visibility: hidden;
+    z-index: 9999;
   }
 }
 
@@ -215,12 +179,27 @@ body.bio-open {
   overflow: visible;
   z-index: 999;
 }
+
 #loading-bar {
   position: relative;
   width: 0;
   height: 2px;
-  background-color: fade(lighten(@accent-color, 2%), 80%);
+  background-color: rgba(lighten($accent-color, 5%), 0.7);
   transition: all 0.5s ease;
 }
 
+body.bio-open {
+
+  .site-sidebar {
+    transform: translate3d(0, 0, 0);
+  }
+  .site-wrapper {
+    transform: translate3d(-280px, 0, 0);
+
+    .overlay {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
 

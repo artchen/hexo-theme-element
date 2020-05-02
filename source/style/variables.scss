@@ -1,0 +1,69 @@
+$fallback-font-family: Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", Microsoft JhengHei, WenQuanYi Micro Hei, "Microsoft YaHei", sans-serif;
+$base-font-family: "Oswald", $fallback-font-family;
+$code-font-family: "inconsolata", Consolas, monospace, sans-serif;
+$article-font-family: "Crimson Text", $fallback-font-family;
+
+$base-font-size: 16px;
+$small-font-size: $base-font-size * 0.875;
+$base-line-height: 1.5;
+
+$spacing-unit: 30px;
+
+$material-red: #f44336;
+$material-pink: #e91e63;
+$material-purple: #9c27b0;
+$material-deep-purple: #673ab7;
+$material-indigo: #3f51b5;
+$material-blue: #2196f3;
+$material-teal: #009688;
+$material-green: #4caf50;
+$material-light-green: #8bc34a;
+$material-orange: #ff9800;
+$material-deep-orange: #ff5722;
+$material-brown: #795548;
+$material-blue-grey: #607d8b;
+$material-grey: #9e9e9e;
+
+$github-color: #467cc2;
+$twitter-color: #55acee;
+$facebook-color: #3765a3;
+$google-color: #db4437;
+$pinterest-color: #bc1725;
+$dribbble-color: #ed699c;
+$weibo-color: #f8712a;
+$tumblr-color: #35465c;
+$instagram-color: #3f729b;
+$linkedin-color: #0077B5;
+$behance-color: #1769FF;
+$tixora-color: #33475A;
+
+$black: #414141;
+$white: #ffffff;
+$text-color: #313232;
+$background-color: #F9F9F9;
+$brand-color: $material-teal;
+$accent-color: $material-orange;
+$grey-color: #828282;
+$blue: #3eb0ef;
+$green: #a4d037;
+$purple: #ad26b4;
+$yellow: #fecd35;
+$red: #f05230;
+$darkgrey: #15171A;
+$midgrey: #738a94;
+$lightgrey: #c5d2d9;
+$whitegrey: #e5eff5;
+$pink: #fa3a57;
+$brown: #a3821a;
+
+$dark-mode: lighten($darkgrey, 2%);
+$dark-mode-site-background: #090a0b;
+$dark-mode-post-background: #191b1f;
+$dark-mode-text-color: lighten($dark-mode-site-background, 80%);
+
+$article-width: 728px;
+
+$modal-threshold: 680px;
+$on-phone: 768px;
+$on-laptop: 992px;
+$on-desktop: 1200px;

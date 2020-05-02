@@ -1,0 +1,242 @@
+@import "variables";
+
+.article {
+  position: relative;
+  width: 100%;
+  max-width: $article-width;
+  margin: 0 auto 20px auto;
+
+  @media (prefers-color-scheme: dark) {
+    color: $dark-mode-text-color;
+  }
+  @media (max-width: $on-phone) {
+    padding: 20px;
+  }
+  .article-header {
+    padding: 20px 0 40px 0;
+
+    @media (max-width: $on-phone) {
+      padding: 0 0 40px 0;
+    }
+
+    h1 {
+      font-size: 2em;
+      line-height: 1.2;
+      margin-bottom: 0;
+
+      @media (max-width: $on-phone) {
+        font-size: 1.5em;
+      }
+    }
+  }
+  .article-meta {
+    font-size: 14px;
+    color: lighten($grey-color, 10%);
+    padding-left: 1px;
+  }
+}
+
+/* Blog article styling */
+
+.article-entry,
+.post-excerpt {
+  position: relative;
+  font-family: $article-font-family;
+  font-size: 18px;
+  color: lighten($text-color, 3%);
+  padding-bottom: 30px;
+
+  @media (prefers-color-scheme: dark) {
+    color: $dark-mode-text-color;
+  }
+  a {
+    color: darken($accent-color, 2%);
+
+    &:hover {
+      color: darken($accent-color, 3%);
+      background: rgba($accent-color, 0.1);
+    }
+    &:active {
+      background: rgba($accent-color, 0.2);
+      color: $white;
+    }
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    position: relative;
+    font-family: $base-font-family;
+    font-weight: bold;
+    margin: 40px auto 30px auto;
+
+    @media (max-width: $on-phone) {
+      left: 15px;
+    }
+    &::before {
+      position: absolute;
+      left: -20px;
+      top: 0;
+      content: "#";
+      color: $material-green;
+      font-weight: normal;
+    }
+  }
+  p {
+    margin-bottom: 20px;
+    line-height: 1.75em;
+  }
+  figure {
+    width: 100%;
+    font-size: 13px;
+    margin: 20px 0;
+    padding: 10px 15px;
+    background-color: $background-color;
+    overflow: auto;
+
+    @media (prefers-color-scheme: dark) {
+      background-color: lighten($dark-mode-post-background, 5%);
+    }
+    td.gutter {
+      padding-right: 10px;
+      color: lighten($grey-color, 8%);
+      font-size: 12px;
+      border-right: 1px solid darken($background-color, 5%);
+    }
+    td.code {
+      padding-left: 10px;
+    }
+  }
+  ul,
+  ol {
+    margin: 20px 0 20px 0;
+    padding-left: 30px;
+    list-style: circle;
+  }
+  img {
+    display: block;
+    border: none;
+    max-width: 100%;
+    height: auto;
+  }
+  blockquote {
+    position: relative;
+    width: 100%;
+    margin: 20px 0;
+    padding: 0 20px;
+    border-left: 4px solid $material-green;
+  }
+  code {
+    color: darken($brand-color, 2%);
+    padding: 3px 5px;
+    margin: 0 2px;
+    border-radius: 2px;
+    white-space: nowrap;
+    font-size: 0.8em;
+    background-color: $background-color;
+
+    @media (prefers-color-scheme: dark) {
+      background-color: lighten($dark-mode-post-background, 5%);
+      color: $dark-mode-text-color;
+    }
+  }
+  pre {
+    white-space: pre;
+
+    code {
+      color: $black;
+      padding: 0 0 0 30px;
+      margin: 0;
+      font-size: 1em;
+      background-color: transparent;
+      border: 0;
+      white-space: inherit;
+
+      @media (prefers-color-scheme: dark) {
+        background-color: lighten($dark-mode-post-background, 5%);
+      }
+    }
+
+    figure {
+      margin: 0;
+    }
+  }
+
+  @media (max-width: $on-phone) {
+    font-size: 16px;
+
+    h1,
+    h2,
+    h3 {
+      margin: 30px 0;
+    }
+    h4,
+    h5,
+    h6 {
+      margin: 20px 0;
+    }
+    h1 {
+      font-size: 1.5em;
+    }
+    h2 {
+      font-size: 1.4em;
+    }
+    h3 {
+      font-size: 1.3em;
+    }
+    h4 {
+      font-size: 1.2em;
+    }
+    h5 {
+      font-size: 1.1em;
+    }
+    h6 {
+      font-size: 1em;
+    }
+    figure {
+      font-size: 13px;
+      line-height: 1.6em;
+    }
+  }
+}
+
+.article-tags {
+  margin-bottom: 30px;
+
+  .tag-link {
+    position: relative;
+    display: inline-block;
+    padding: 4px 10px 6px 10px;
+    margin: 0 5px 5px 0;
+    line-height: normal;
+    font-size: 14px;
+    background-color: $background-color;
+    border-radius: 2px;
+
+    @media (prefers-color-scheme: dark) {
+      background-color: $dark-mode-post-background;
+      color: $white;
+    }
+    &:hover {
+      background-color: $black;
+      color: $white;
+
+      @media (prefers-color-scheme: dark) {
+        background-color: lighten($dark-mode-post-background, 5%);
+      }
+    }
+    &::before {
+      content: "#";
+      margin-right: 3px;
+    }
+  }
+}
+
+/* Comments */
+
+#comments {
+  position: relative;
+  padding: $spacing-unit 0;
+}

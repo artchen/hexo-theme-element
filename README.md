@@ -9,7 +9,7 @@ This theme depends on the following Hexo plugins:
 * hexo-generator-tag
 * hexo-generator-feed
 * hexo-renderer-ejs
-* hexo-renderer-less
+* hexo-renderer-scss
 * hexo-renderer-marked
 * hexo-pagination
 * hexo-all-minifier
@@ -19,6 +19,8 @@ This theme depends on the following Hexo plugins:
 For local search, you also need hexo-generator-json-content and add configuration to your global `_config.yml` if needed, refer to [hexo-generator-json-content](https://github.com/alexbruno/hexo-generator-json-content) github repository.
 
 ## Customization
+
+First of all change the site logo in `header.ejs`.
 
 Element is customizable via the `_config.yml` in the theme directory.
 
@@ -52,7 +54,8 @@ Public resources used in this theme:
 
 * [icomoon](https://icomoon.io/)
 * [normalize.css](https://necolas.github.io/normalize.css/)
-* [Google Fonts - Lato](https://fonts.google.com/specimen/Lato)
+* [Google Fonts - Oswald](https://fonts.google.com/specimen/Oswald)
+* [Google Fonts - Inconsolata](https://fonts.google.com/specimen/Inconsolata)
 
 Copyright © Art Chen
 

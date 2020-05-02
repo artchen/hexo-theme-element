@@ -1,0 +1,78 @@
+@import './variables';
+
+.site-header {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  user-select: none;
+  padding: 20px;
+
+  .square {
+    position: relative;
+    display: block;
+    font-weight: normal;
+    cursor: pointer;
+    overflow: hidden;
+
+    &.logo {
+      float: left;
+    }
+    &.me {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      visibility: visible;
+      opacity: 1;
+      transition: all 0.24s;
+      z-index: 65535;
+
+      &.active {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+    span {
+      display: block;
+      float: left;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      vertical-align: middle;
+      text-align: center;
+      transition: all 0.24s;
+
+      &.b {
+        background-color: $black;
+        color: $white;
+
+        @media (prefers-color-scheme: dark) {
+          background-color: lighten($dark-mode-site-background, 10%);
+        }
+        &:hover {
+          color: $accent-color;
+          background-color: $black;
+
+          @media (prefers-color-scheme: dark) {
+            background-color: $dark-mode-site-background;
+          }
+        }
+      }
+      &.w {
+        background: transparent;
+        color: $black;
+
+        @media (prefers-color-scheme: dark) {
+          color: $accent-color;
+        }
+        &:hover {
+          color: $white;
+          background-color: $black;
+
+          @media (prefers-color-scheme: dark) {
+            background-color: lighten($dark-mode-site-background, 10%);
+          }
+        }
+      }
+    }
+  }
+}

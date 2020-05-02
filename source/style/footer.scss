@@ -1,4 +1,4 @@
-/* Footer */
+@import "variables";
 
 #footer {
   position: relative;
@@ -6,21 +6,27 @@
   font-size: 14px;
   overflow: hidden;
   text-align: center;
-  opacity: 0;
   transform: translate3d(0px, -20px, 0px);
   transition: all 0.4s;
   z-index: 3;
 
-	&.show {
-		transform: translate3d(0px, 0px, 0px);
-		opacity: 1;
-	}
-  a {
-    color: @grey-color;
+  &.show {
+    transform: translate3d(0px, 0px, 0px);
+    opacity: 1;
+  }
 
+  @media (prefers-color-scheme: dark) {
+    color: lighten($dark-mode-site-background, 40%);
+  }
+  a {
+    color: $grey-color;
+
+    @media (prefers-color-scheme: dark) {
+      color: lighten($dark-mode-site-background, 80%);
+    }
     &:hover {
-      background: fade(@material-orange, 20%);
-      color: darken(@material-orange, 0%);
+      background: rgba($material-orange, 0.2);
+      color: darken($material-orange, 0%);
     }
   }
 }
@@ -30,8 +36,8 @@
 .search {
   position: relative;
   width: 100%;
-  max-width: 700px;
-  margin: 0px auto 20px auto;
+  max-width: $article-width;
+  margin: 0 auto 20px auto;
   z-index: 2;
 
   #searchform {
@@ -43,7 +49,7 @@
       display: block;
       position: absolute;
       top: 0;
-      right: 0px;
+      right: 0;
       width: 36px;
       height: 36px;
       background: transparent;
@@ -51,28 +57,36 @@
       border: 0;
       text-align: center;
       font-size: 18px;
-      
+      cursor: pointer;
+
       span {
-	      line-height: 36px;
+        line-height: 36px;
       }
     }
   }
   #searchinput {
     width: 100%;
-    padding: 0px 10px;
+    padding: 0 10px;
     line-height: 36px;
     height: 36px;
     font-size: 14px;
-    font-family: @base-font-family;
+    font-family: $base-font-family;
     border: none;
     border-radius: 0 !important;
-    background: @black;
+    background: $black;
     color: white;
     box-sizing: border-box;
     transition: all 0.24s ease;
 
+    @media (prefers-color-scheme: dark) {
+      background: lighten($dark-mode-post-background, 5%);
+    }
     &:focus {
-      background: black;
+      background: darken($black, 70%);
+
+      @media (prefers-color-scheme: dark) {
+        background: darken($dark-mode-post-background, 2%);
+      }
     }
   }
 }

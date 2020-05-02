@@ -1,8 +1,11 @@
+<%
+    var siteWrapperClass = is_post() || is_page() ? 'is_post_page' : '';
+%>
 <!DOCTYPE html>
 <html>
 <%- partial('_partial/head') %>
 <body>
-  <div class="site-wrapper">
+  <div class="site-wrapper <%- siteWrapperClass %>">
     <%- partial('_partial/header', null, {cache: !config.relative_link}) %>
     <script>document.getElementById("loading-bar").style.width="40%";</script>
     <main id="main" class="clearfix">

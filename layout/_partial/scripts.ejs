@@ -1,16 +1,41 @@
 <!-- Universal Search -->
 
 <script type="text/javascript">
-	var GOOGLE_CUSTOM_SEARCH_API_KEY = "<%- theme.search.google_api_key %>";
-	var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "<%- theme.search.google_engine_id %>";
-	var ALGOLIA_API_KEY = "<%- theme.search.algolia_api_key %>";
-	var ALGOLIA_APP_ID = "<%- theme.search.algolia_app_id %>";
-	var ALGOLIA_INDEX_NAME = "<%- theme.search.algolia_index_name %>";
+  var GOOGLE_CUSTOM_SEARCH_API_KEY = "<%- theme.search.google_api_key %>";
+  var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "<%- theme.search.google_engine_id %>";
+  var ALGOLIA_API_KEY = "<%- theme.search.algolia_api_key %>";
+  var ALGOLIA_APP_ID = "<%- theme.search.algolia_app_id %>";
+  var ALGOLIA_INDEX_NAME = "<%- theme.search.algolia_index_name %>";
   var AZURE_SERVICE_NAME = "<%- theme.search.azure_service_name %>";
   var AZURE_INDEX_NAME = "<%- theme.search.azure_index_name %>";
   var AZURE_QUERY_KEY = "<%- theme.search.azure_query_key %>";
   var BAIDU_API_ID = "<%- theme.search.baidu_api_id %>";
   var SEARCH_SERVICE = "<%- theme.search.service %>";
+  var universalSearchConfig = {};
+  if (SEARCH_SERVICE === 'google') {
+    universalSearchConfig = {
+      searchService: SEARCH_SERVICE,
+      apiKey: GOOGLE_CUSTOM_SEARCH_API_KEY,
+      engineId: GOOGLE_CUSTOM_SEARCH_ENGINE_ID,
+      imagePath: "/img/"
+    };
+  } else if (SEARCH_SERVICE === 'algolia') {
+    universalSearchConfig = {
+      searchService: SEARCH_SERVICE,
+      apiKey: ALGOLIA_API_KEY,
+      appId: ALGOLIA_APP_ID,
+      indexName: ALGOLIA_INDEX_NAME,
+      imagePath: "/img/"
+    };
+  } else if (SEARCH_SERVICE === 'azure') {
+    universalSearchConfig = {
+      searchService: SEARCH_SERVICE,
+      serviceName: AZURE_SERVICE_NAME,
+      indexName: AZURE_INDEX_NAME,
+      apiKey: AZURE_QUERY_KEY,
+      imagePath: "/img/"
+    };
+  }
 </script>
 
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>

@@ -1,3 +1,5 @@
+@import "variables";
+
 /* Tomorrow Theme */
 .tomorrow-comment, pre .comment, pre .title {
   color: #8e908c;
@@ -33,9 +35,13 @@
 
 pre code {
   display: block;
-  background: white;
+  background-color: $white;
   color: #4d4d4c;
   line-height: 1.5;
   border: 1px solid #ccc;
   padding: 10px;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: lighten($dark-mode-post-background, 5%);
+  }
 }
