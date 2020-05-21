@@ -8,7 +8,7 @@ author_avatar: /img/avatar.png
 # Search
 search: 
   enable: false
-  service: hexo # swiftype/google/hexo/algolia/azure
+  service: google # google/algolia/azure
   # google 
   google_api_key: 
   google_engine_id: 
