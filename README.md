@@ -16,8 +16,6 @@ This theme depends on the following Hexo plugins:
 * hexo-autoprefixer
 * hexo-front-matter
 
-For local search, you also need hexo-generator-json-content and add configuration to your global `_config.yml` if needed, refer to [hexo-generator-json-content](https://github.com/alexbruno/hexo-generator-json-content) github repository.
-
 ## Customization
 
 First of all change the site logo in `header.ejs`.
@@ -33,16 +31,31 @@ Element also depends on the global `_config.yml`. For example:
 In addition to these settings, you may also want to edit/replace the following files:
 
 * Replace the author avatar: `source/img/avatar.png`.
-* The font used on [Artifact.me](https://artifact.me) is Futura PT. I include it via Adobe Typekit. You need to use your own web font service, or go with the default Lato via Google Font. Details in `layout/_partial/head.ejs`.
 
-This theme currently supports 4 search services:
+This theme currently supports 3 search services:
 
-* Google custom search
-* Hexo Local search (hexo-json-content)
-* Algolia search
-* Microsoft Azure search
+* Google custom search (does not require plugin)
+* Algolia search (requires plugin https://github.com/LouisBarranqueiro/hexo-algoliasearch)
+* Microsoft Azure search (requires plugin https://github.com/artchen/hexo-azuresearch)
 
-Setup guide for searching is availble here: [universal-search](https://github.com/artchen/universal-search).
+Find search configuration in theme's `_config.yaml`:
+
+```yaml
+search: 
+  enable: true
+  service: azure # google/algolia/azure
+  # google 
+  google_api_key: 
+  google_engine_id: 
+  # algolia
+  algolia_app_id: 
+  algolia_api_key: 
+  algolia_index_name:
+  # azure
+  azure_service_name: 
+  azure_index_name: 
+  azure_query_key: 
+```
 
 ## Demo
 
@@ -56,6 +69,7 @@ Public resources used in this theme:
 * [normalize.css](https://necolas.github.io/normalize.css/)
 * [Google Fonts - Oswald](https://fonts.google.com/specimen/Oswald)
 * [Google Fonts - Inconsolata](https://fonts.google.com/specimen/Inconsolata)
+* [Google Fonts - Crimson Text](https://fonts.google.com/specimen/Crimson+Text)
 
 Copyright © Art Chen
 
